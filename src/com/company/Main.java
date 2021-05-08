@@ -49,11 +49,14 @@ public class Main {
                 word = entry.getKey();
             }
 
+            public int getCount() {
+                return count;
+            }
+
             @Override
             public String toString() {
                 return "count=" + count +
-                        ", word='" + word + '\'' +
-                        '}';
+                        ", word='" + word + '\'';
             }
         }
 
