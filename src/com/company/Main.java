@@ -40,11 +40,11 @@ public class Main {
                         }
                 );
 
-        class ForExample {
+        class LettersFrequency {
             private int count;
             private String word;
 
-            public ForExample(Map.Entry<String, Integer> entry) {
+            public LettersFrequency(Map.Entry<String, Integer> entry) {
                 count = entry.getValue();
                 word = entry.getKey();
             }
@@ -60,11 +60,11 @@ public class Main {
             }
         }
 
-        Comparator<ForExample> comparator = (fe1, fe2) -> Integer.compare(fe1.count, fe2.getCount());
+        Comparator<LettersFrequency> comparator = (fe1, fe2) -> Integer.compare(fe1.count, fe2.getCount());
 
         map.entrySet()
                 .stream()
-                .map(ForExample::new)
+                .map(LettersFrequency::new)
                 .sorted(comparator.reversed())
                 .forEach(System.out::println);
 

@@ -2,18 +2,16 @@ package com.company;
 
 import com.company.exception.StudentGroupOverflowException;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.Scanner;
 
 public class Group implements MilitaryCommissar {
     public static final int GROUP_CAPACITY = 10;
     public static final int AGE_ARMY = 18;
     private final ArrayList<Human> students;
     private int studentsInGroup;
-
-//    public Group() {
-//        this.students = new Student[10];
-//    }
-
 
     public Group(ArrayList<Human> students) {
         this.students = students;
@@ -41,6 +39,7 @@ public class Group implements MilitaryCommissar {
         try {
             checkGroupCapacity();
             students.add(student);
+            studentsInGroup++;
         } catch (StudentGroupOverflowException e) {
             System.out.printf("NOT added %s \n", student.getHumanInfo());
         }
